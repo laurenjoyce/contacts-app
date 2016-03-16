@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    Contact.create(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], bio: params[:bio])
     render 'create.html.erb'
   end
 
@@ -38,7 +38,7 @@ class ContactsController < ApplicationController
   def update
     contact_id = params[:id]
     @contact = Contact.find_by(id: contact_id)
-    @contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    @contact.update(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], bio: params[:bio])
     render 'update.html.erb'
   end
 
