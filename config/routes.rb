@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get '/' => 'contacts#index'
+
   get '/contact_information' => 'contacts#personal_info'
   get '/contact_list' => 'contacts#complete_list'
 
